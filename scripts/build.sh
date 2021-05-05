@@ -36,7 +36,7 @@ fi
 ## iterate over and build each version/variant combination; by default building
 ## latest version; build matrix will override to build each supported version
 VERSION_LIST="${VERSION_LIST:-"7.0"}"
-VARIANT_LIST="${VARIANT_LIST:-"cli fpm"}"
+VARIANT_LIST="${VARIANT_LIST:-"cli fpm fpm-loaders"}"
 
 IMAGE_NAME="${IMAGE_NAME:-"smartbeetles/php"}"
 for BUILD_VERSION in ${VERSION_LIST}; do
