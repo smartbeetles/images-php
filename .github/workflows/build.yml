@@ -15,10 +15,11 @@ jobs:
       matrix:
         php_version: ["7.0", "7.2", "7.3", "7.4", "8.0"]
     steps:
+      - uses: actions/checkout@v1
       - name: Change wrapper permissions
         run: chmod +x ./scripts/build.sh
-      - uses: actions/checkout@v1
-      - run: ./scripts/build.sh --push
+      - name: Run build
+        run:  ./scripts/build.sh --push
         env:
           VERSION_LIST: ${{ matrix.php_version }}
           VARIANT_LIST: ${{ matrix.php_variants }}
