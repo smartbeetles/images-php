@@ -17,7 +17,7 @@ RUN set -eux \
         if [[ ${PKG} = "sodium" ]] && (( ${PHP_VERSION} < 72 )); then continue; fi; \
         PHP_PACKAGES+="php-${PKG} "; \
     done \
-    && yum install -y ${PHP_PACKAGES} git perl which npm patch gettext unzip bzip2 pwgen nmap-ncat jq \
+    && yum install -y ${PHP_PACKAGES} git tar perl which npm patch gettext unzip bzip2 pwgen nmap-ncat jq \
     && yum clean all \
     && rm -rf /var/cache/yum
 
